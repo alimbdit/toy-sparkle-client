@@ -5,7 +5,7 @@
 
 
 .component{
-    @apply mx-5 lg:mx-10 my-2 lg:my-5
+    @apply mx-2 lg:mx-10 my-2 
 }
 
 .active{
@@ -14,4 +14,12 @@
 
 .inactive{
     @apply text-neutral-700 bg-white text-lg hover:text-neutral-800
+}
+
+.btn-default{
+    @apply bg-orange-500 px-4 py-1 text-white font-medium rounded-md text-lg text-center hover:bg-orange-400
+}
+
+.link-default{
+    @apply text-emerald-600 hover:text-emerald-700 hover:underline font-medium
 }

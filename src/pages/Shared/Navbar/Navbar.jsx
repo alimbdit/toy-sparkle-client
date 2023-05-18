@@ -31,7 +31,7 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to="/"
-                  className={({ isActive }) => (isActive ? "active" : "")}
+                  className={({ isActive }) => (isActive ? "active" : "inactive")}
                 >
                   Home
                 </NavLink>
@@ -80,7 +80,7 @@ const Navbar = () => {
           </div>
           <div>
             <Link to="/" className=" flex items-center gap-2 lg:gap-3">
-              <span className="p-2 lg:p-3 rounded-full bg-orange-100">
+              <span className="p-1 lg:p-3 rounded-full bg-orange-100">
                 <img className="w-7 lg:w-10 " src={toys} alt="" />
               </span>
               <div className="text-2xl lg:text-4xl font-extrabold">
@@ -95,7 +95,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
-                className={({ isActive }) => (isActive ? "active" : "")}
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
               >
                 Home
               </NavLink>
@@ -150,6 +150,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
+          <Link to='/login'><button className="btn-default">Login</button></Link>
         </div>
       </div>
     </div>

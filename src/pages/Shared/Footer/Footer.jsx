@@ -140,13 +140,13 @@ const Footer = () => {
               className="border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
             <button className="bg-orange-500 hover:bg-orange-600 text-base text-white px-4 py-2 rounded">
-              Subscribe
+              Contact Us
             </button>
           </div>
         </div>
       </div>
       <div className="border-t border-neutral-600 my-7"></div>
-      <div className="text-center -mb-3">Copyright © 2023 ToySparkle.com. All rights reserved</div>
+      <div className="text-center -mb-3 text-emerald-100">Copyright © 2023 ToySparkle.com. All rights reserved</div>
     </footer>
   );
 };
