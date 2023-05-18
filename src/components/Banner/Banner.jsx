@@ -5,17 +5,17 @@ import pic3 from "../../assets/images/3.png";
 const Banner = () => {
   return (
     <>
-      <div className="carousel w-full h-screen">
+      <div className="carousel w-full h-full">
         <div
           id="slide1"
           className="carousel-item  relative w-full bg-emerald-100 "
         >
           <div className="flex flex-col-reverse lg:flex-row lg:justify-between items-center justify-center w-full gap-5 lg:gap-20 my-5">
-            <div className="w-full ml-20">
+            <div className="w-3/4 lg:w-full ml-20">
               <h2 className="text-4xl lg:text-5xl font-extrabold text-neutral-700 mb-5">
                 Best Kids Store <br /> & Online Shop
               </h2>
-              <p className="text-lg mb-5">
+              <p className="text-lg mb-5 ">
                 {" "}
                 Where Playtime Knows No Bounds! Explore our diverse collection
                 of toys, from action figures to puzzles, sparking endless fun
@@ -39,7 +39,7 @@ const Banner = () => {
         </div>
         <div id="slide2" className="carousel-item relative w-full bg-emerald-100">
         <div className="flex flex-col-reverse lg:flex-row lg:justify-between items-center justify-center w-full gap-5 lg:gap-20 my-5">
-            <div className="w-full ml-20">
+            <div className="w-3/4 lg:w-full ml-20">
               <h2 className="text-4xl lg:text-5xl font-extrabold text-neutral-700 mb-5">
                 Best Kids Store <br /> & Online Shop
               </h2>
@@ -67,7 +67,7 @@ const Banner = () => {
         </div>
         <div id="slide3" className="carousel-item relative w-full bg-emerald-100">
         <div className="flex flex-col-reverse lg:flex-row justify-center lg:justify-between items-center w-full gap-3 lg:gap-20 my-5">
-            <div className="w-full ml-20">
+            <div className="w-3/4 lg:w-full ml-20">
               <h2 className="text-4xl lg:text-5xl font-extrabold text-neutral-700 mb-5">
                 Best Kids Store <br /> & Online Shop
               </h2>

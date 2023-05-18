@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import avatar from "../../../public/avatar.png";
 import { AuthContext } from "./../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [registerError, setRegisterError] = useState("");
@@ -13,7 +14,19 @@ const Register = () => {
 
   const from = location.state?.from?.from?.pathname;
 
-  const { registerUser, profileUpdate, googleSignIn, setUser } = useContext(AuthContext);
+  const { registerUser, profileUpdate, googleSignIn, setUser } =
+    useContext(AuthContext);
+
+  const swalObj = {
+    position: "center",
+    icon: "success",
+    title: "Welcome",
+    text: "Registration Successful!",
+    showConfirmButton: false,
+    timer: 1500,
+  };
+
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,8 +45,9 @@ const Register = () => {
         console.log(result.user);
         setRegisterError("");
         setRegisterSuccess("Registration successful");
+        Swal.fire(swalObj);
         navigate(from || "/login", { replace: true });
-        setUser(result.user)
+        setUser(result.user);
         profileUpdate(userName, photo)
           .then(() => {
             // console.log("profile updated");
@@ -49,18 +63,17 @@ const Register = () => {
       });
   };
 
-
   const signInWithGoogle = () => {
     googleSignIn()
-    .then((result) => {
+      .then((result) => {
         setUser(result.user);
         navigate(from || "/");
-        console.log(result.user)
-    })
-    .catch((error) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
         setRegisterError(error?.code.split("/")[1].split("-").join(" "));
-    })
-  }
+      });
+  };
 
   return (
     <>
@@ -152,7 +165,10 @@ const Register = () => {
           </div>
           <div className="divider text-neutral-600">OR</div>
 
-          <button onClick={signInWithGoogle} className="border-2 border-emerald-700 text-emerald-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 ">
+          <button
+            onClick={signInWithGoogle}
+            className="border-2 border-emerald-700 text-emerald-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 "
+          >
             <FaGoogle className="w-6 h-6" />
             <span className="text-lg font-medium">Continue with Google</span>
           </button>
