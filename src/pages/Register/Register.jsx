@@ -13,7 +13,7 @@ const Register = () => {
 
   const from = location.state?.from?.from?.pathname;
 
-  const { registerUser } = useContext(AuthContext);
+  const { registerUser, profileUpdate, googleSignIn, setUser } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,16 +29,38 @@ const Register = () => {
 
     registerUser(email, password)
       .then((result) => {
-        console.log(result.user)
+        console.log(result.user);
         setRegisterError("");
         setRegisterSuccess("Registration successful");
         navigate(from || "/login", { replace: true });
+        setUser(result.user)
+        profileUpdate(userName, photo)
+          .then(() => {
+            // console.log("profile updated");
+          })
+          .catch((error) => {
+            setRegisterError(error?.code.split("/")[1].split("-").join(" "));
+          });
+
         event.target.reset();
       })
       .catch((error) => {
         setRegisterError(error?.code.split("/")[1].split("-").join(" "));
       });
   };
+
+
+  const signInWithGoogle = () => {
+    googleSignIn()
+    .then((result) => {
+        setUser(result.user);
+        navigate(from || "/");
+        console.log(result.user)
+    })
+    .catch((error) => {
+        setRegisterError(error?.code.split("/")[1].split("-").join(" "));
+    })
+  }
 
   return (
     <>
@@ -130,7 +152,7 @@ const Register = () => {
           </div>
           <div className="divider text-neutral-600">OR</div>
 
-          <button className="border-2 border-emerald-700 text-emerald-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 ">
+          <button onClick={signInWithGoogle} className="border-2 border-emerald-700 text-emerald-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 ">
             <FaGoogle className="w-6 h-6" />
             <span className="text-lg font-medium">Continue with Google</span>
           </button>
