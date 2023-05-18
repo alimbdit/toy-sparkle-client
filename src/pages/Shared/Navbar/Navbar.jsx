@@ -4,7 +4,7 @@ import toys from "../../../../public/toys.png";
 
 const Navbar = () => {
   return (
-    <div className="component ">
+    <div className="component">
       <div className="navbar bg-base-100">
         <div className="justify-start w-full">
           <div className="dropdown">
