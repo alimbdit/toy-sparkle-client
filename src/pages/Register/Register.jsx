@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+
+
+    const [registerError, setRegisterError] = useState("");
+    const [registerSuccess, setRegisterSuccess] = useState("");
+
+
   return (
     <>
       <div className="hero pb-10 bg-emerald-100 bg-opacity-10">
@@ -69,7 +76,11 @@ const Register = () => {
                     Forgot password?
                   </Link>
                 </label>
-              <div className="form-control mt-6">
+                <div className="h-5 -mt-2 mb-2">
+                <span className="text-rose-600 text-lg ">{registerError}</span>
+                <span className="text-emerald-700  text-lg">{registerSuccess}</span>
+              </div>
+              <div className="form-control">
                 <input
                   className="btn-default cursor-pointer"
                   type="submit"

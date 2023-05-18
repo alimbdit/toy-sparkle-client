@@ -1,8 +1,13 @@
-import React from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
+
+    const [loginError, setLoginError] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState("");
+
+
   return (
     <>
       <div className="hero pb-10 bg-emerald-100 bg-opacity-10">
@@ -35,13 +40,18 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
-                <label className="mt-1">
+                
+              </div>
+              <label className="mt-1">
                   <Link to="#" className="label-text link-default">
                     Forgot password?
                   </Link>
                 </label>
+              <div className="h-5 -mt-2 mb-2">
+                <span className="text-rose-600 text-lg ">{loginError}</span>
+                <span className="text-emerald-700  text-lg">{loginSuccess}</span>
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control ">
                 <input className="btn-default cursor-pointer" type="submit" value='Login' />
               </div>
 
