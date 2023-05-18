@@ -1,30 +1,64 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import avatar from "../../../public/avatar.png";
+import { AuthContext } from "./../../Providers/AuthProvider";
 
 const Register = () => {
+  const [registerError, setRegisterError] = useState("");
+  const [registerSuccess, setRegisterSuccess] = useState("");
 
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const [registerError, setRegisterError] = useState("");
-    const [registerSuccess, setRegisterSuccess] = useState("");
+  const from = location.state?.from?.from?.pathname;
 
+  const { registerUser } = useContext(AuthContext);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    setRegisterError("");
+    setRegisterSuccess("");
+
+    const form = event.target;
+    const userName = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value || avatar;
+
+    registerUser(email, password)
+      .then((result) => {
+        console.log(result.user)
+        setRegisterError("");
+        setRegisterSuccess("Registration successful");
+        navigate(from || "/login", { replace: true });
+        event.target.reset();
+      })
+      .catch((error) => {
+        setRegisterError(error?.code.split("/")[1].split("-").join(" "));
+      });
+  };
 
   return (
     <>
       <div className="hero pb-10 bg-emerald-100 bg-opacity-10">
-        <div className="hero-content flex-col ">
+        <div className="hero-content flex-col lg:w-1/3">
           <div className="text-center">
             <h1 className="text-4xl font-bold my-3">Register</h1>
           </div>
-          <div className=" card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body  bg-rose-100 bg-opacity-10 border border-rose-200 rounded-xl">
+          <div className=" card  flex-shrink-0 w-full shadow-2xl bg-base-100">
+            <form
+              onSubmit={handleSubmit}
+              className="card-body  bg-rose-100 bg-opacity-10 border border-rose-200 rounded-xl"
+            >
               <div className="form-control mb-2">
                 {/* <label className="label">
                   <span className="text-base">Your Name</span>
                 </label> */}
                 <input
                   type="text"
-                  name='name'
+                  name="name"
                   placeholder="Your Name"
                   className="input input-bordered"
                   required
@@ -63,22 +97,19 @@ const Register = () => {
                   placeholder="Photo URL"
                   name="photo"
                   className="input input-bordered"
-                 
                 />
-                
-                
               </div>
 
-              
-              
               <label className="mt-1">
-                  <Link to="#" className="label-text link-default">
-                    Forgot password?
-                  </Link>
-                </label>
-                <div className="h-5 -mt-2 mb-2">
+                <Link to="#" className="label-text link-default">
+                  Forgot password?
+                </Link>
+              </label>
+              <div className="h-5 -mt-2 mb-2">
                 <span className="text-rose-600 text-lg ">{registerError}</span>
-                <span className="text-emerald-700  text-lg">{registerSuccess}</span>
+                <span className="text-emerald-700  text-lg">
+                  {registerSuccess}
+                </span>
               </div>
               <div className="form-control">
                 <input

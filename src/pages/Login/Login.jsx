@@ -11,7 +11,7 @@ const Login = () => {
   return (
     <>
       <div className="hero pb-10 bg-emerald-100 bg-opacity-10">
-        <div className="hero-content flex-col">
+        <div className="hero-content flex-col lg:w-1/3">
           <div className="text-center">
             <h1 className="text-4xl font-bold my-3">Login</h1>
           </div>

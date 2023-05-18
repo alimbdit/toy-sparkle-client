@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="navbar bg-base-100">
         <div className="justify-start w-full">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost pl-0 lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -80,8 +80,8 @@ const Navbar = () => {
           </div>
           <div>
             <Link to="/" className=" flex items-center gap-2 lg:gap-3">
-              <span className="p-1 lg:p-3 rounded-full bg-orange-100">
-                <img className="w-7 lg:w-10 " src={toys} alt="" />
+              <span className="p-2 lg:p-2 rounded-full bg-orange-100">
+                <img className="w-7 lg:w-8 " src={toys} alt="" />
               </span>
               <div className="text-2xl lg:text-4xl font-extrabold">
                 <span className="text-emerald-500">Toy</span>

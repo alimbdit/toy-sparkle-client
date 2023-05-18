@@ -17,7 +17,7 @@
 }
 
 .btn-default{
-    @apply bg-orange-500 px-4 py-1 text-white font-medium rounded-md text-lg text-center hover:bg-orange-400
+    @apply bg-orange-500 px-5 py-2 text-white font-medium rounded-lg text-lg text-center hover:bg-orange-400
 }
 
 .link-default{
