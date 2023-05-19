@@ -8,7 +8,7 @@ const Banner = () => {
       <div className="carousel w-full h-full">
         <div
           id="slide1"
-          className="carousel-item  relative w-full bg-emerald-100 "
+          className="carousel-item  relative w-full bg-violet-100 "
         >
           <div className="flex flex-col-reverse lg:flex-row lg:justify-between items-center justify-center w-full gap-5 lg:gap-20 my-5">
             <div className="w-3/4 lg:w-full ml-20">
@@ -22,10 +22,10 @@ const Banner = () => {
                 and laughter. Unleash imagination and embark on unforgettable
                 adventures at ToyWorld. Let the joy begin!
               </p>
-              <button className="btn-default mb-5">Shop Now</button>
+              <button className="btn-violet mb-5">Shop Now</button>
             </div>
             <div className="w-full justify-center lg:justify-start flex">
-              <img src={pic1} className=" object-cover px-2" />
+              <img src={pic3} className=" object-cover px-2" />
             </div>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -37,7 +37,7 @@ const Banner = () => {
             </a>
           </div>
         </div>
-        <div id="slide2" className="carousel-item relative w-full bg-emerald-100">
+        <div id="slide2" className="carousel-item relative w-full bg-violet-100">
         <div className="flex flex-col-reverse lg:flex-row lg:justify-between items-center justify-center w-full gap-5 lg:gap-20 my-5">
             <div className="w-3/4 lg:w-full ml-20">
               <h2 className="text-4xl lg:text-5xl font-extrabold text-neutral-700 mb-5">
@@ -50,7 +50,7 @@ const Banner = () => {
                 and laughter. Unleash imagination and embark on unforgettable
                 adventures at ToyWorld. Let the joy begin!
               </p>
-              <button className="btn-default  mb-5">Shop Now</button>
+              <button className="btn-violet  mb-5">Shop Now</button>
             </div>
             <div className="w-full justify-center lg:justify-start flex">
               <img src={pic2} className="w-3/4" />
@@ -65,7 +65,7 @@ const Banner = () => {
             </a>
           </div>
         </div>
-        <div id="slide3" className="carousel-item relative w-full bg-emerald-100">
+        <div id="slide3" className="carousel-item relative w-full bg-violet-100">
         <div className="flex flex-col-reverse lg:flex-row justify-center lg:justify-between items-center w-full gap-3 lg:gap-20 my-5">
             <div className="w-3/4 lg:w-full ml-20">
               <h2 className="text-4xl lg:text-5xl font-extrabold text-neutral-700 mb-5">
@@ -78,10 +78,10 @@ const Banner = () => {
                 and laughter. Unleash imagination and embark on unforgettable
                 adventures at ToyWorld. Let the joy begin!
               </p>
-              <button className="btn-default  mb-5">Shop Now</button>
+              <button className="btn-violet  mb-5">Shop Now</button>
             </div>
             <div className="w-full justify-center lg:justify-start flex">
-              <img src={pic3} className="object-cover " />
+              <img src={pic1} className="object-cover " />
             </div>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

@@ -77,7 +77,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="hero pb-10 bg-emerald-100 bg-opacity-10">
+      <div className="hero pb-10 bg-violet-100 bg-opacity-10">
         <div className="hero-content flex-col lg:w-1/3">
           <div className="text-center">
             <h1 className="text-4xl font-bold my-3">Register</h1>
@@ -135,14 +135,18 @@ const Register = () => {
                 />
               </div>
 
-              <label className="mt-1">
-                <Link to="#" className="label-text link-default">
-                  Forgot password?
+             <span>
+             <label className="mt-1 label-text">
+                <input type="checkbox" id="terms" value="terms" className="mr-1 cursor-pointer" />
+                Accept
+                <Link to="#" className="label-text link-default ml-1">
+                  Terms and conditions
                 </Link>
               </label>
+             </span>
               <div className="h-5 -mt-2 mb-2">
                 <span className="text-rose-600 text-lg ">{registerError}</span>
-                <span className="text-emerald-700  text-lg">
+                <span className="text-violet-700  text-lg">
                   {registerSuccess}
                 </span>
               </div>
@@ -167,7 +171,7 @@ const Register = () => {
 
           <button
             onClick={signInWithGoogle}
-            className="border-2 border-emerald-700 text-emerald-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 "
+            className="border-2 border-violet-700 text-violet-700 hover:bg-orange-500 duration-300 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 "
           >
             <FaGoogle className="w-6 h-6" />
             <span className="text-lg font-medium">Continue with Google</span>

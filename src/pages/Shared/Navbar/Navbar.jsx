@@ -73,7 +73,7 @@ const Navbar = () => {
                     isActive ? "active" : "inactive"
                   }
                 >
-                  My Toys
+                  Blogs
                 </NavLink>
               </li>
             </ul>
@@ -84,7 +84,7 @@ const Navbar = () => {
                 <img className="w-7 lg:w-8 " src={toys} alt="" />
               </span>
               <div className="text-2xl lg:text-4xl font-extrabold">
-                <span className="text-emerald-500">Toy</span>
+                <span className="text-violet-500">Toy</span>
                 <span className="text-orange-500 ">Sparkle</span>
               </div>
             </Link>
@@ -129,7 +129,7 @@ const Navbar = () => {
                 to="/blogs"
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
               >
-                My Toys
+                Blogs
               </NavLink>
             </li>
           </ul>

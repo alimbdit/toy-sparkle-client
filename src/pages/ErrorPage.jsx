@@ -20,7 +20,7 @@ const ErrorPage = () => {
       <div className="flex justify-center">
       <Link
             to='/'
-            className='px-6 py-2 font-semibold hover:bg-emerald-600 bg-emerald-700 text-white text-lg rounded-xl'
+            className='px-6 py-2 font-semibold hover:bg-violet-600 bg-violet-700 text-white text-lg rounded-xl mb-5 duration-300' 
           >
             Back to home
           </Link>

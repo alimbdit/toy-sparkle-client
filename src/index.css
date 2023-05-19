@@ -16,10 +16,17 @@
     @apply text-neutral-700 bg-white text-lg hover:text-neutral-800
 }
 
+.btn-detail{
+    @apply bg-violet-500 hover:bg-violet-600 duration-300 text-white px-3 py-1 rounded 
+}
+
 .btn-default{
-    @apply bg-orange-500 px-5 py-2 text-white font-medium rounded-lg text-lg text-center hover:bg-orange-400
+    @apply bg-orange-500 px-5 py-2 duration-300 text-white font-medium rounded-lg text-lg text-center hover:bg-orange-400
+}
+.btn-violet{
+    @apply bg-violet-500 px-5 py-2 duration-300 text-white font-medium rounded-lg text-lg text-center hover:bg-indigo-500
 }
 
 .link-default{
-    @apply text-emerald-600 hover:text-emerald-700 hover:underline font-medium
+    @apply text-violet-600 hover:text-violet-700 hover:underline font-medium
 }

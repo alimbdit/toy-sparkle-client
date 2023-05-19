@@ -24,6 +24,9 @@ const Login = () => {
 
   const from = location.state?.from?.pathname || "/";
 
+
+//   email password signin
+
   const handleSignIn = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -50,6 +53,8 @@ const Login = () => {
       });
   };
 
+
+
 //   google signin
 
   const signInWithGoogle = () => {
@@ -66,7 +71,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="hero pb-10 bg-emerald-100 bg-opacity-10">
+      <div className="hero pb-10 bg-violet-100 bg-opacity-10">
         <div className="hero-content flex-col lg:w-1/3">
           <div className="text-center">
             <h1 className="text-4xl font-bold my-3">Login</h1>
@@ -107,7 +112,7 @@ const Login = () => {
               </label>
               <div className="h-5 -mt-2 mb-2">
                 <span className="text-rose-600 text-lg ">{loginError}</span>
-                <span className="text-emerald-700  text-lg">
+                <span className="text-violet-700  text-lg">
                   {loginSuccess}
                 </span>
               </div>
@@ -130,7 +135,7 @@ const Login = () => {
           </div>
           <div className="divider my-2 text-neutral-600">OR</div>
 
-          <button onClick={signInWithGoogle} className="border-2 border-emerald-700 text-emerald-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 ">
+          <button onClick={signInWithGoogle} className="border-2 border-violet-700 duration-300 text-violet-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 ">
             <FaGoogle className="w-6 h-6" />
             <span className="text-lg font-medium">Continue with Google</span>
           </button>
