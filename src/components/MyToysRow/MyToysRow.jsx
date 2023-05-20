@@ -2,7 +2,7 @@ import { Rating, ThinStar } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import UpdateModal from "../UpdateModal/UpdateModal";
 
-const MyToysRow = ({ myToy, handleDelete }) => {
+const MyToysRow = ({ myToy, handleDelete, handleUpdate }) => {
   const {
     _id,
     toyName,
@@ -69,27 +69,47 @@ const MyToysRow = ({ myToy, handleDelete }) => {
         </p>
       </td>
       <th>
-        {/* <button className="btn-update  mr-2" htmlFor="update-toy">
+        {/* <button className="btn-update  mr-2" htmlFor={`update-toy-${_id}`}>
           Update
         </button> */}
        
         <label
-          htmlFor="update-toy"
+          htmlFor={`update-toy-${_id}`}
           className="btn-update cursor-pointer mr-2"
         >
           Update
         </label>
         
+        <button onClick={() => handleDelete(_id)} className="btn-delete">Delete</button>
+        
         <>
           <input
             type="checkbox"
-            id="update-toy"
+            id={`update-toy-${_id}`}
             className="modal-toggle"
           />
-          <UpdateModal></UpdateModal>
+            <div className="modal">
+            {/* <p>{myToy}</p> */}
+      <div className="modal-box w-11/12 max-w-full ">
+        <div className="flex justify-end sticky right-0 top-0">
+          <label
+            htmlFor={`update-toy-${_id}`}
+            className="btn border-0 btn-sm btn-circle bg-red-500 hover:bg-red-600"
+          >
+            ✕
+          </label>
+        </div>
+       <UpdateModal myToy={myToy} handleUpdate={handleUpdate}></UpdateModal>
+        {/* <div className="modal-action">
+          <label htmlFor={`update-toy-${_id}`} className="btn-black">
+            Close
+          </label>
+        </div> */}
+      </div>
+    </div>
+          
         </>
 
-        <button onClick={() => handleDelete(_id)} className="btn-delete">Delete</button>
       </th>
       
     </tr>

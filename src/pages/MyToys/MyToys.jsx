@@ -7,12 +7,13 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [sort, setSort] = useState("");
   const [myToys, setMyToys] = useState();
+  const [control, setControl] = useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/toys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, [user]);
-  console.log(myToys);
+  }, [user, control]);
+  //   console.log(myToys);
 
   const handleSort = async (sortText) => {
     setSort(sortText);
@@ -45,18 +46,48 @@ const MyToys = () => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-              
-              const remaining = myToys.filter(
-                (booking) => booking._id !== id 
-              );
+              const remaining = myToys.filter((toy) => toy._id !== id);
               setMyToys(remaining);
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              
             }
           });
-        
       }
     });
+  };
+
+  const handleUpdate = (data) => {
+    console.log(data);
+
+    fetch(`http://localhost:5000/updateToy/${data._id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.modifiedCount > 0) {
+          setControl(!control);
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Update Successful",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        } else {
+          setControl(!control);
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Toy Is Unchanged",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        // console.log(result);
+      });
   };
 
   //   const handleSort = (tabName) => {
@@ -103,7 +134,12 @@ const MyToys = () => {
             <tbody className="w-full">
               {user &&
                 myToys?.map((myToy) => (
-                  <MyToysRow key={myToy._id} myToy={myToy} handleDelete={handleDelete}></MyToysRow>
+                  <MyToysRow
+                    key={myToy._id}
+                    myToy={myToy}
+                    handleDelete={handleDelete}
+                    handleUpdate={handleUpdate}
+                  ></MyToysRow>
                 ))}
             </tbody>
           </table>

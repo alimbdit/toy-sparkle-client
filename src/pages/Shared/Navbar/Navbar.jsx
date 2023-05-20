@@ -1,8 +1,23 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../../public/logo.png";
+
 import toys from "../../../../public/toys.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  // const navigate = useNavigate()
+
+  const handleLogOut = () => {
+    logOut()
+      .then(()=>{
+      })
+      .catch((error) => {
+        // console.log(error);
+      });
+    // console.log(user);
+  };
+
   return (
     <div className="component">
       <div className="navbar bg-base-100">
@@ -46,7 +61,8 @@ const Navbar = () => {
                   All Toys
                 </NavLink>
               </li>
-              <li>
+              {
+                user && <li>
                 <NavLink
                   to="/mytoys"
                   className={({ isActive }) =>
@@ -56,7 +72,9 @@ const Navbar = () => {
                   My Toys
                 </NavLink>
               </li>
-              <li>
+              }
+              {
+                user && <li>
                 <NavLink
                   to="/addtoy"
                   className={({ isActive }) =>
@@ -66,6 +84,8 @@ const Navbar = () => {
                   Add Toy
                 </NavLink>
               </li>
+              }
+              
               <li>
                 <NavLink
                   to="/blogs"
@@ -108,7 +128,8 @@ const Navbar = () => {
                 All Toys
               </NavLink>
             </li>
-            <li>
+            {
+              user && <li>
               <NavLink
                 to="/mytoys"
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -116,7 +137,9 @@ const Navbar = () => {
                 My Toys
               </NavLink>
             </li>
-            <li>
+            }
+            {
+              user && <li>
               <NavLink
                 to="/addtoy"
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
@@ -124,6 +147,7 @@ const Navbar = () => {
                 Add Toy
               </NavLink>
             </li>
+            }
             <li>
               <NavLink
                 to="/blogs"
@@ -135,10 +159,10 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="lg:w-full justify-end">
-          <div className="dropdown dropdown-end">
+          {/* <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={logo} />
+                <img src={user?.photoURL} />
               </div>
             </label>
             <ul
@@ -146,11 +170,53 @@ const Navbar = () => {
               className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
-                <button className="active:bg-orange-500">Logout</button>
+                <Link to='/' onClick={handleLogOut} className="active:bg-orange-500">Logout</Link>
               </li>
             </ul>
-          </div>
-          <Link to='/login'><button className="btn-default">Login</button></Link>
+          </div> */}
+          
+        </div>
+        <div className="  items-end">
+          {user ? (
+            <div className="dropdown dropdown-end flex justify-end tooltip-info  tooltip tooltip-left" data-tip={user?.displayName}>
+              <label
+                tabIndex={0}
+                className="relative cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden  hover:bg-neutral-100  "
+                
+              >
+                <div className=" w-10 h-10  flex justify-center items-center">
+                  
+                   <img
+                      className=" w-10 h-10  rounded-full object-cover absolute "
+                      src={user?.photoURL}
+                      
+                    />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="mt-3 p-2 shadow menu menu-compact top-8  dropdown-content bg-base-100 rounded-box w-52"
+              >
+               
+                <li>
+                  <Link className="hover:bg-orange-300 text-base" to="/" onClick={handleLogOut}>
+                    Logout
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <div className="flex justify-end">
+              <div>
+                <Link to="/login" className="btn-default mr-5">
+                  Login
+                </Link>
+                {/* <Link to="/register" className="btn-default">
+                  Register
+                </Link> */}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
