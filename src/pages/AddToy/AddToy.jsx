@@ -26,7 +26,7 @@ const AddToy = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data)
+    // console.log(data)
 
     fetch('http://localhost:5000/toys', {
         method: 'POST',
@@ -37,7 +37,7 @@ const AddToy = () => {
     })
     .then(res=>res.json())
     .then(result => {
-        console.log(result)
+        // console.log(result)
         if(result.acknowledged){
 
             Swal.fire(swalObj);
