@@ -1,8 +1,10 @@
 import { Rating, ThinStar } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import UpdateModal from "../UpdateModal/UpdateModal";
 
-const MyToysRow = ({ myToy }) => {
+const MyToysRow = ({ myToy, handleDelete }) => {
   const {
+    _id,
     toyName,
     sellerName,
     sellerEmail,
@@ -41,14 +43,16 @@ const MyToysRow = ({ myToy }) => {
       <td>
         <span className="text-xl pl-2">{sellerName}</span>
         <br />
-        <span className="badge mt-2 badge-ghost badge-md text-base">{sellerEmail}</span>
+        <span className="badge mt-2 badge-ghost badge-md text-base">
+          {sellerEmail}
+        </span>
       </td>
       <td>
         <span className="text-lg">${price}</span>
         <br />
         <span>
           <Rating
-          className="mt-2"
+            className="mt-2"
             style={{ maxWidth: 100 }}
             itemStyles={defaultItemStyles}
             value={Math.round(parseFloat(rating)) || 0}
@@ -57,13 +61,37 @@ const MyToysRow = ({ myToy }) => {
         </span>
       </td>
       <td className="text-lg">{quantity} </td>
-      <td ><p className="w-30 whitespace-pre-line">{description?.split(" ").length > 20
-                  ? description?.split(" ").slice(0, 20).join(" ") + "..."
-                  : description} </p></td>
+      <td>
+        <p className="w-30 whitespace-pre-line">
+          {description?.split(" ").length > 20
+            ? description?.split(" ").slice(0, 20).join(" ") + "..."
+            : description}{" "}
+        </p>
+      </td>
       <th>
-        <button className="btn-update  mr-2">Update</button>
-        <button className="btn-delete">Delete</button>
+        {/* <button className="btn-update  mr-2" htmlFor="update-toy">
+          Update
+        </button> */}
+       
+        <label
+          htmlFor="update-toy"
+          className="btn-update cursor-pointer mr-2"
+        >
+          Update
+        </label>
+        
+        <>
+          <input
+            type="checkbox"
+            id="update-toy"
+            className="modal-toggle"
+          />
+          <UpdateModal></UpdateModal>
+        </>
+
+        <button onClick={() => handleDelete(_id)} className="btn-delete">Delete</button>
       </th>
+      
     </tr>
   );
 };
