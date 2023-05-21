@@ -15,7 +15,7 @@ const AllToy = () => {
   //   console.log(toys);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toysByName/${searchName}`)
+    fetch(`https://toy-sparkle-server.vercel.app/toysByName/${searchName}`)
     .then(res => res.json())
     .then(result => {
         setToys(result)

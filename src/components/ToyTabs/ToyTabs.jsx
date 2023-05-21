@@ -7,7 +7,7 @@ const ToyTabs = () => {
   const [activeTab, setActiveTab] = useState("Science Kits");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/toyBySubCategory/${activeTab}`)
+    fetch(`https://toy-sparkle-server.vercel.app/toyBySubCategory/${activeTab}`)
     .then(res => res.json())
     .then(result => setToys(result))
   }, [activeTab])

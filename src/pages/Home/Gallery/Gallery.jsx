@@ -26,44 +26,47 @@ const Gallery = () => {
         <div className="component">
       <div className="grid grid-cols-2 lg:flex lg:flex-row gap-1">
         <div className="">
-          <img className="w-56 h-52 shadow-lg" src={sc1} alt="" />
+          <img className="w-56 h-52 shadow-lg border" src={sc1} alt="" />
         </div>
         <div>
-          <img className="w-56  h-52 shadow-lg" src={sc2} alt="" />
+          <img className="w-56  h-52 shadow-lg border" src={sc2} alt="" />
         </div>
         <div>
-          <img className="w-56 h-52 shadow-lg" src={sc3} alt="" />
+          <img className="w-56 h-52 shadow-lg border" src={sc3} alt="" />
         </div>
         <div>
-          <img className="w-56 h-52 shadow-lg" src={sc4} alt="" />
+          <img className="w-56 h-52 shadow-lg border" src={sc4} alt="" />
         </div>
         <div>
-          <img className="w-56 h-52 shadow-lg" src={mt1} alt="" />
+          <img className="w-56 h-52 shadow-lg border" src={mt1} alt="" />
         </div>
         <div>
-          <img className="w-56 h-52  shadow-lg" src={mt2} alt="" />
+          <img className="w-56 h-52  shadow-lg border" src={mt2} alt="" />
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-1 mt-1">
         <div className="flex-1">
-          <img className="w-full h-64 shadow-lg" src={mtland} alt="" />
+          <img className="w-full h-64 shadow-lg border border" src={mtland} alt="" />
         </div>
         <div className="flex-1">
-          <img className="h-64 w-full shadow-lg flex-1" src={en3} alt="" />
+          <img className="h-64 w-full shadow-lg border flex-1" src={en1} alt="" />
+        </div>
+        <div className="flex-1">
+          <img className="h-64 w-full shadow-lg border flex-1" src={en2} alt="" />
         </div>
       </div>
       <div className="flex flex-col lg:flex-row gap-1 mt-1">
         <div className="flex-1">
-          <img className="w-full h-[260px] shadow-lg" src={mtrect} alt="" />
+          <img className="w-full h-[260px] shadow-lg border" src={mtrect} alt="" />
         </div>
         <div className="grid mb-1 grid-cols-2 gap-1 h-64">
-            <img src={en5} className="shadow-lg w-56 lg:w-36 h-32" alt="" />
-            <img src={en6} className="shadow-lg w-56 lg:w-36 h-32" alt="" />
-            <img src={mt3} className="shadow-lg w-56 lg:w-36 h-32" alt="" />
-            <img src={en4} className="shadow-lg w-56 lg:w-36 h-32" alt="" />
+            <img src={en5} className="shadow-lg border w-56 lg:w-36 h-32" alt="" />
+            <img src={en6} className="shadow-lg border w-56 lg:w-36 h-32" alt="" />
+            <img src={mt3} className="shadow-lg border w-56 lg:w-36 h-32" alt="" />
+            <img src={en4} className="shadow-lg border w-56 lg:w-36 h-32" alt="" />
      </div>
         <div className="flex-1">
-          <img className="w-full h-[260px]  shadow-lg flex-1" src={en3} alt="" />
+          <img className="w-full h-[260px]  shadow-lg border flex-1" src={en3} alt="" />
         </div>
       </div>
     </div>

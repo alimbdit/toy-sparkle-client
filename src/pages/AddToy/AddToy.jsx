@@ -28,7 +28,7 @@ const AddToy = () => {
   const onSubmit = (data) => {
     // console.log(data)
 
-    fetch('http://localhost:5000/toys', {
+    fetch('https://toy-sparkle-server.vercel.app/toys', {
         method: 'POST',
         headers: {
             "content-type": "application/json"
@@ -138,7 +138,7 @@ const AddToy = () => {
                 className="select-bordered focus:outline-0 select text-base font-normal "
                 {...register("subCategory", { required: true })}
               >
-                <option disabled selected></option>
+                {/* <option disabled >Pick SubCategory</option> */}
                 <option value="Science Kits">Science Kits</option>
                 <option value="Math Learning Toys">Math Learning Toys</option>
                 <option value="Engineering Kits">Engineering Kits</option>

@@ -41,12 +41,12 @@ const router = createBrowserRouter([
         {
           path: "/allToys",
           element: <AllToy></AllToy>,
-          loader: () => fetch('http://localhost:5000/toys')
+          loader: () => fetch('https://toy-sparkle-server.vercel.app/toys')
         },
         {
           path: "/toy/:id",
           element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+          loader: ({params}) => fetch(`https://toy-sparkle-server.vercel.app/toy/${params.id}`)
           
         },
         {
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         {
           path: "/blogs",
           element: <Blogs></Blogs>,
-          loader: () => fetch("http://localhost:5000/blogs")
+          loader: () => fetch("https://toy-sparkle-server.vercel.app/blogs")
         }
         
       ],

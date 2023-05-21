@@ -10,7 +10,7 @@ const MyToys = () => {
   const [myToys, setMyToys] = useState();
   const [control, setControl] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/toys/${user?.email}`)
+    fetch(`https://toy-sparkle-server.vercel.app/toys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [user, control]);
@@ -23,7 +23,7 @@ const MyToys = () => {
   const handleSort = async (sortText) => {
     setSort(sortText);
     setMyToys('')
-    await fetch(`http://localhost:5000/toys/${user?.email}`, {
+    await fetch(`https://toy-sparkle-server.vercel.app/toys/${user?.email}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -45,7 +45,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toy/${id}`, {
+        fetch(`https://toy-sparkle-server.vercel.app/toy/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -64,7 +64,7 @@ const MyToys = () => {
   const handleUpdate = (data) => {
     console.log(data);
 
-    fetch(`http://localhost:5000/updateToy/${data._id}`, {
+    fetch(`https://toy-sparkle-server.vercel.app/updateToy/${data._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
