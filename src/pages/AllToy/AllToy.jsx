@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Loader from "../../components/Loader";
+import useTitle from "../../hooks/useTitle";
 
 const AllToy = () => {
   const AllToys = useLoaderData();
+
+  useTitle("All Toys")
 
   const [toys, setToys] = useState(AllToys);
   const [searchName, setSearchName] = useState("");

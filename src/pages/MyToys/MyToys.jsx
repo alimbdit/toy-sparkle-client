@@ -3,12 +3,15 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import MyToysRow from "../../components/MyToysRow/MyToysRow";
 import Swal from "sweetalert2";
 import Loader from "../../components/Loader";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [sort, setSort] = useState("");
   const [myToys, setMyToys] = useState();
   const [control, setControl] = useState(false);
+
+  useTitle("My Toys")
   useEffect(() => {
     fetch(`https://toy-sparkle-server.vercel.app/toys/${user?.email}`)
       .then((res) => res.json())
@@ -50,7 +53,7 @@ const MyToys = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               const remaining = myToys.filter((toy) => toy._id !== id);
               setMyToys(remaining);
@@ -62,7 +65,7 @@ const MyToys = () => {
   };
 
   const handleUpdate = (data) => {
-    console.log(data);
+    // console.log(data);
 
     fetch(`https://toy-sparkle-server.vercel.app/updateToy/${data._id}`, {
       method: "PATCH",

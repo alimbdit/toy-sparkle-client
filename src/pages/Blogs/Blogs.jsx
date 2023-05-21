@@ -3,10 +3,14 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Loader from "../../components/Loader";
 import BlogCard from "./BlogCard";
+import useTitle from "../../hooks/useTitle";
 
 const Blogs = () => {
+
+  useTitle("Blogs")
+
   const blogs = useLoaderData();
-  console.log(blogs);
+  // console.log(blogs);
   if (!blogs) {
     return <Loader></Loader>;
   }

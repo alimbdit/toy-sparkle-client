@@ -4,15 +4,19 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import avatar from "../../../public/avatar.png";
 import { AuthContext } from "./../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
   const [registerError, setRegisterError] = useState("");
   const [registerSuccess, setRegisterSuccess] = useState("");
 
+  useTitle("Register")
+
   const location = useLocation();
   const navigate = useNavigate();
 
   const from = location.state?.from?.from?.pathname;
+  // console.log(from)
 
   const { registerUser, profileUpdate, googleSignIn, setUser } =
     useContext(AuthContext);
@@ -60,7 +64,7 @@ const Register = () => {
 
     registerUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         setRegisterError("");
         setRegisterSuccess("Registration successful");
         Swal.fire(swalObj);
@@ -73,7 +77,7 @@ const Register = () => {
           .catch((error) => {
             setRegisterError(error?.code.split("/")[1].split("-").join(" "));
           });
-
+          // window.location.reload(true)
         event.target.reset();
       })
       .catch((error) => {
@@ -86,7 +90,7 @@ const Register = () => {
       .then((result) => {
         setUser(result.user);
         navigate(from || "/");
-        console.log(result.user);
+        // console.log(result.user);
       })
       .catch((error) => {
         setRegisterError(error?.code.split("/")[1].split("-").join(" "));

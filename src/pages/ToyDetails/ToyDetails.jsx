@@ -3,10 +3,12 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { Rating, ThinStar } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import useTitle from "../../hooks/useTitle";
 
 const ToyDetails = () => {
   const toy = useLoaderData();
   const navigate = useNavigate();
+  useTitle("Details")
   const {
     toyName,
     sellerName,

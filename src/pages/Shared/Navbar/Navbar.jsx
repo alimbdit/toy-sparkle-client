@@ -1,12 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 
 import toys from "../../../../public/toys.png";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
+  
   const { user, logOut } = useContext(AuthContext);
   // const navigate = useNavigate()
+
+  
+
+ 
 
   const handleLogOut = () => {
     logOut()
@@ -45,7 +50,7 @@ const Navbar = () => {
             >
               <li>
                 <NavLink
-                  to="/"
+                  to="/" 
                   className={({ isActive }) => (isActive ? "active" : "inactive")}
                 >
                   Home
@@ -115,6 +120,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/"
+               
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
               >
                 Home

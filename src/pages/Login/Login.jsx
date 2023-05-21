@@ -3,10 +3,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
   const [loginSuccess, setLoginSuccess] = useState("");
+
+  useTitle("Login")
 
   const swalObj = {
     position: "center",
@@ -79,7 +82,7 @@ const Login = () => {
       .then((result) => {
         setUser(result.user);
         navigate(from || "/");
-        console.log(result.user);
+        // console.log(result.user);
       })
       .catch((error) => {
         setLoginError(error?.code.split("/")[1].split("-").join(" "));
@@ -143,7 +146,7 @@ const Login = () => {
 
               <p className="mt-2 text-center">
                 Don&apos;t have an account?{" "}
-                <Link className="link-default font-semibold" to="/register">
+                <Link className="link-default font-semibold" to="/register" state={{ from: location.state }}>
                   {" "}
                   Register
                 </Link>

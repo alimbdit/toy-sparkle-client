@@ -19,7 +19,7 @@ const ToyTabs = () => {
     return <Loader></Loader>
   }
 
-  console.log(toys)
+  // console.log(toys)
   return (
     <div className="mt-10 mb-20">
         <h2 className="text-center text-5xl font-bold text-violet-700 py-5 ">
