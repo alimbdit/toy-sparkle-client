@@ -26,7 +26,7 @@ const ToyCard = ({toy}) => {
       };
     
   return (
-    <div className="card  w-full lg:w-96 bg-base-100 shadow-xl">
+    <div className="card  w-full  bg-base-100 shadow-xl">
       <figure className="h-80 relative">
         <img
         className="object-cover  h-full w-full "
@@ -34,7 +34,7 @@ const ToyCard = ({toy}) => {
           alt="Toy Photo"
         />
       </figure>
-      <div className="card-body  items-center text-cente">
+      <div className="card-body  items-center text-center">
         <h2 className="card-title text-3xl font-semibold text-neutral-800">{toyName}</h2>
         <h3 className="text-xl font-medium text-neutral-600 ">Price: ${price}</h3>
         <Rating
