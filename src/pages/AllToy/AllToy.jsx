@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import Loader from "../../components/Loader";
 
 const AllToy = () => {
   const AllToys = useLoaderData();
 
   const [toys, setToys] = useState(AllToys);
-  const [serachName, setSearchName] = useState("");
+  const [searchName, setSearchName] = useState("");
+
+  if(!toys){
+    return <Loader></Loader>
+  }
 
   //   console.log(toys);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toysByName/${serachName}`)
+    fetch(`http://localhost:5000/toysByName/${searchName}`)
     .then(res => res.json())
     .then(result => {
         setToys(result)

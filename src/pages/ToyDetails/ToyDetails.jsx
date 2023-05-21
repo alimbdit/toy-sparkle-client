@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { Rating, ThinStar } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
 const ToyDetails = () => {
   const toy = useLoaderData();
+  const navigate = useNavigate();
   const {
     toyName,
     sellerName,
@@ -43,12 +44,17 @@ const ToyDetails = () => {
               />
             </figure>
             <div className="card-body  w-full">
-              <Link to="/alltoys" className="flex items-center ">
+              <button
+                onClick={() => {
+                  navigate(-1);
+                }}
+                className="flex items-center "
+              >
                 <FaArrowCircleLeft className="mr-1 text-2xl duration-300 text-violet-500 hover:text-indigo-500" />
-              </Link>
+              </button>
               <h2 className="text-2xl font-bold text-orange-500">{toyName}</h2>
               {/* <hr /> */}
-             
+
               <p className=" text-lg text-orange-700">
                 {/* <h3 className="text-lg  text-neutral-800 font-medium">
                   Product Info

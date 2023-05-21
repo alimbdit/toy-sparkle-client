@@ -53,7 +53,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/alltoys"
+                  to="/allToys"
                   className={({ isActive }) =>
                     isActive ? "active" : "inactive"
                   }
@@ -76,7 +76,7 @@ const Navbar = () => {
               {
                 user && <li>
                 <NavLink
-                  to="/addtoy"
+                  to="/addToy"
                   className={({ isActive }) =>
                     isActive ? "active" : "inactive"
                   }
@@ -122,7 +122,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/alltoys"
+                to="/allToys"
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
               >
                 All Toys
@@ -141,7 +141,7 @@ const Navbar = () => {
             {
               user && <li>
               <NavLink
-                to="/addtoy"
+                to="/addToy"
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
               >
                 Add Toy

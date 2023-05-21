@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToysRow from "../../components/MyToysRow/MyToysRow";
 import Swal from "sweetalert2";
+import Loader from "../../components/Loader";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -15,8 +16,13 @@ const MyToys = () => {
   }, [user, control]);
   //   console.log(myToys);
 
+  if(!myToys){
+    return <Loader></Loader>
+  }
+
   const handleSort = async (sortText) => {
     setSort(sortText);
+    setMyToys('')
     await fetch(`http://localhost:5000/toys/${user?.email}`, {
       method: "POST",
       headers: {
