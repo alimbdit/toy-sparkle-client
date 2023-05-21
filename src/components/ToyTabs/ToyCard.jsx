@@ -1,7 +1,10 @@
-import React from "react";
+import  { useEffect } from "react";
 import { Rating, ThinStar } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const ToyCard = ({toy}) => {
     const {
@@ -24,9 +27,13 @@ const ToyCard = ({toy}) => {
         inactiveFillColor: "#fff7e1",
         inactiveStrokeColor: "#e17b21",
       };
+
+      useEffect(() => {
+        AOS.init({duration: 1000});
+      }, [])
     
   return (
-    <div className="card  w-full  bg-base-100 shadow-xl">
+    <div className="card  w-full  bg-base-100 shadow-xl" data-aos="fade-left">
       <figure className="h-80 relative">
         <img
         className="object-cover  h-full w-full "

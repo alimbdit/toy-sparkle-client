@@ -40,6 +40,24 @@ const Register = () => {
     const password = form.password.value;
     const photo = form.photo.value || avatar;
 
+    
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setRegisterError("please enter at least one upper case");
+      return;
+    } else if (!/(?=.*?[a-z])/.test(password)) {
+      setRegisterError("please enter at least one lower case");
+      return;
+    } else if (!/(?=.*\d)/.test(password)) {
+      setRegisterError("please enter at least one digit");
+      return;
+    } else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+      setRegisterError("please enter at least one special character");
+      return;
+    } else if (!/(?=.{6,})/.test(password)) {
+      setRegisterError("please enter at least six character");
+      return;
+    }
+
     registerUser(email, password)
       .then((result) => {
         console.log(result.user);

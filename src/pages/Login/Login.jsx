@@ -36,6 +36,23 @@ const Login = () => {
     setLoginSuccess("");
     setLoginError("");
 
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setLoginError("please enter at least one upper case");
+      return;
+    } else if (!/(?=.*?[a-z])/.test(password)) {
+      setLoginError("please enter at least one lower case");
+      return;
+    } else if (!/(?=.*\d)/.test(password)) {
+      setLoginError("please enter at least one digit");
+      return;
+    } else if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
+      setLoginError("please enter at least one special character");
+      return;
+    } else if (!/(?=.{6,})/.test(password)) {
+      setLoginError("please enter at least six character");
+      return;
+    }
+
     // console.log(email, password)
     signIn(email, password)
       .then((result) => {

@@ -1,6 +1,10 @@
 import { Rating, ThinStar } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const ReviewCard = ({singleReview}) => {
     const {id, name, photo, rating, review} = singleReview;
 
@@ -12,8 +16,14 @@ const ReviewCard = ({singleReview}) => {
         inactiveFillColor: "#fff7e1",
         inactiveStrokeColor: "#e17b21",
       };
+
+      
+  useEffect(() => {
+    AOS.init({duration: 1000});
+  }, [])
+
     return (
-        <div className="card rounded-md w-full bg-base-100 shadow-xl  border border-orange-700">
+        <div className="card rounded-md w-full bg-base-100 shadow-xl  border border-orange-700" data-aos="zoom-in">
             <figure className="px-10 pt-7">
               <img
                 src={photo}

@@ -1,20 +1,28 @@
 import { FaDollarSign, FaServicestack, FaSwatchbook, FaSeedling } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const ChoseUs = () => {
+
+    useEffect(() => {
+        AOS.init({duration: 1000});
+      }, [])
+
   return (
     <div className=" my-10 lg:mt-16 lg:mb-28">
       <div className=" component gap-10 flex flex-col lg:flex-row items-center ">
-        <div className="w-full text-center lg:text-end">
-          <h2 className="text-5xl font-bold text-violet-700 mb-5">
+        <div className="w-full text-center lg:text-end" >
+          <h2 className="text-5xl font-bold text-violet-700 mb-5" data-aos="fade-down">
             Why Chose Us
           </h2>
-          <p className="text-lg text-neutral-700">
+          <p className="text-lg text-neutral-700" data-aos="fade-up">
             We prioritize the safety and happiness of your little ones. Our toys
             go through rigorous quality checks to ensure they meet the highest
             standards. We carefully select toys from reputable brands known for
             their craftsmanship and commitment to quality.{" "}
           </p>
-          <p className="text-lg text-neutral-700">
+          <p className="text-lg text-neutral-700" data-aos="fade-up">
             We offer an extensive selection of toys that cater to all ages and
             interests. From classic favorites to the latest trends, our
             collection is thoughtfully curated to bring joy and spark
@@ -27,7 +35,7 @@ const ChoseUs = () => {
           </p> */}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full">
-          <div className="shadow-lg text-white p-5 bg-orange-600 rounded-es-3xl rounded-se-3xl border text-center">
+          <div className="shadow-lg text-white p-5 bg-orange-600 rounded-es-3xl rounded-se-3xl border text-center" data-aos="zoom-in-left">
             <div className="flex justify-center ">
               <FaDollarSign className="text-6xl bg-white text-orange-400 p-2 rounded-full mb-1"></FaDollarSign>
             </div>
@@ -41,7 +49,7 @@ const ChoseUs = () => {
               competitive pricing without compromising on quality.
             </p>
           </div>
-          <div className="shadow-lg text-white p-5 bg-orange-600 rounded-es-3xl rounded-se-3xl border text-center">
+          <div className="shadow-lg text-white p-5 bg-orange-600 rounded-es-3xl rounded-se-3xl border text-center" data-aos="zoom-in-left">
             <div className="flex justify-center ">
               <FaServicestack className="text-6xl bg-white text-orange-400 p-2 rounded-full mb-1"></FaServicestack>
             </div>
@@ -55,7 +63,7 @@ const ChoseUs = () => {
               assist you with any concerns.
             </p>
           </div>
-          <div className="shadow-lg text-white p-5 bg-orange-600 rounded-es-3xl rounded-se-3xl border text-center">
+          <div className="shadow-lg text-white p-5 bg-orange-600 rounded-es-3xl rounded-se-3xl border text-center" data-aos="zoom-in-left">
           <div className="flex justify-center ">
               <FaSwatchbook className="text-6xl bg-white text-orange-400 p-2 rounded-full mb-1"></FaSwatchbook>
             </div>
@@ -69,7 +77,7 @@ const ChoseUs = () => {
               collection includes toys that stimulate creativity and critical thinking skills.
             </p>
           </div>
-          <div className="shadow-lg text-white p-5 bg-orange-600 rounded-es-3xl rounded-se-3xl border text-center">
+          <div className="shadow-lg text-white p-5 bg-orange-600 rounded-es-3xl rounded-se-3xl border text-center" data-aos="zoom-in-left">
           <div className="flex justify-center ">
               <FaSeedling className="text-6xl bg-white text-orange-400 p-2 rounded-full mb-1"></FaSeedling>
             </div>
