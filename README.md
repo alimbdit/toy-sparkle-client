@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-# toy-sparkle-client-side
-=======
-# b7a11-toy-marketplace-client-side-alimbdit
 
->>>>>>> ecb2c9039a90b7f5b69dc085eb7a8f8a315bd976
+# toy-sparkle-client-side
 
 # ToySparkle
 ### A simple React app built with React & React Router Dom and Host on firebase.
