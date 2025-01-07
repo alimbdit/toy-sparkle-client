@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Banner from "../../../components/Banner/Banner";
 import ChoseUs from "../../../components/ChoseUs/ChoseUs";
 import ToyTabs from "../../../components/ToyTabs/ToyTabs";

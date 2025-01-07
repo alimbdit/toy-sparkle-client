@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthProvider";
@@ -24,7 +24,7 @@ const AddToy = () => {
   const {
     register,
     handleSubmit,
-    watch,
+  
     reset,
     formState: { errors },
   } = useForm();
