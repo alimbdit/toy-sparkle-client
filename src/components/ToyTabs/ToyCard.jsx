@@ -33,7 +33,7 @@ const ToyCard = ({toy}) => {
       }, [])
     
   return (
-    <div className="card  w-full  bg-base-100 shadow-xl" data-aos="fade-left">
+    <div className="card  w-full  bg-base-100 dark:bg-gray-100 shadow-xl" data-aos="fade-left">
       <figure className="h-80 relative">
         <img
         className="object-cover  h-full w-full "

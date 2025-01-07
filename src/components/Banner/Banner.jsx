@@ -23,7 +23,7 @@ const Banner = () => {
               <h2 className="text-4xl lg:text-5xl font-extrabold text-neutral-700 mb-5">
                 Best Kids Store <br /> & Online Shop
               </h2>
-              <p className="text-lg mb-5 ">
+              <p className="text-lg mb-5 dark:text-gray-700">
                 {" "}
                 Where Playtime Knows No Bounds! Explore our diverse collection
                 of toys, from action figures to puzzles, sparking endless fun
@@ -51,7 +51,7 @@ const Banner = () => {
               <h2 className="text-4xl lg:text-5xl font-extrabold text-neutral-700 mb-5">
                 Best Kids Store <br /> & Online Shop
               </h2>
-              <p className="text-lg mb-5">
+              <p className="text-lg mb-5 dark:text-gray-700">
                 {" "}
                 Where Playtime Knows No Bounds! Explore our diverse collection
                 of toys, from action figures to puzzles, sparking endless fun
@@ -79,7 +79,7 @@ const Banner = () => {
               <h2 className="text-4xl lg:text-5xl font-extrabold text-neutral-700 mb-5">
                 Best Kids Store <br /> & Online Shop
               </h2>
-              <p className="text-lg mb-5">
+              <p className="text-lg mb-5 dark:text-gray-700">
                 {" "}
                 Where Playtime Knows No Bounds! Explore our diverse collection
                 of toys, from action figures to puzzles, sparking endless fun

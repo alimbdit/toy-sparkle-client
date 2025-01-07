@@ -94,12 +94,12 @@ const Login = () => {
       <div className="hero pb-10 bg-violet-100 bg-opacity-10">
         <div className="hero-content flex-col lg:w-1/3">
           <div className="text-center">
-            <h1 className="text-4xl font-bold my-3">Login</h1>
+            <h1 className="text-4xl font-bold my-3 dark-heading">Login</h1>
           </div>
-          <div className=" card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className=" card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
             <form
               onSubmit={handleSignIn}
-              className="card-body  bg-rose-100 bg-opacity-10 border border-rose-200 rounded-xl"
+              className="card-body bg-rose-100 dark:bg-gray-100 bg-opacity-10 dark:bg-opacity-90 border border-rose-200 rounded-xl"
             >
               <div className="form-control mt-1 mb-2">
                 {/* <label className="label">
@@ -109,7 +109,7 @@ const Login = () => {
                   type="email"
                   placeholder="Your Email"
                   name="email"
-                  className="input input-bordered"
+                  className="input input-bordered dark-text"
                   required
                 />
               </div>
@@ -121,7 +121,7 @@ const Login = () => {
                   type="password"
                   placeholder="password"
                   name="password"
-                  className="input input-bordered"
+                  className="input input-bordered dark-text"
                   required
                 />
               </div>
@@ -144,7 +144,7 @@ const Login = () => {
                 />
               </div>
 
-              <p className="mt-2 text-center">
+              <p className="mt-2 text-center dark:text-gray-700">
                 Don&apos;t have an account?{" "}
                 <Link className="link-default font-semibold" to="/register" state={{ from: location.state }}>
                   {" "}
@@ -153,11 +153,11 @@ const Login = () => {
               </p>
             </form>
           </div>
-          <div className="divider my-2 text-neutral-600">OR</div>
+          <div className="divider my-2 text-neutral-600 dark-text">OR</div>
 
-          <button onClick={signInWithGoogle} className="border-2 border-violet-700 duration-300 text-violet-700 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 ">
+          <button onClick={signInWithGoogle} className="border-2 dark:bg-gray-100 dark:bg-opacity-90 dark:border-orange-500 border-violet-700 duration-300 text-violet-700 dark:text-orange-500 hover:bg-orange-500 hover:text-white hover:border-orange-500 rounded-lg px-4 py-2 flex items-center space-x-2  focus:outline-none focus:ring-0 ">
             <FaGoogle className="w-6 h-6" />
-            <span className="text-lg font-medium">Continue with Google</span>
+            <span className="text-lg font-medium ">Continue with Google</span>
           </button>
         </div>
       </div>

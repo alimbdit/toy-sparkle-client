@@ -29,7 +29,7 @@ const Gallery = () => {
 
   return (
     <div className=" bg-rose-100 bg-opacity-25 py-10 pb-16">
-        <h2 className="text-center text-5xl font-bold text-violet-700 py-5 ">
+        <h2 className="text-center text-5xl font-bold text-violet-700 dark-heading py-5 ">
         Photo Gallery
       </h2>
         <div className="component">

@@ -22,7 +22,7 @@ const ToyTabs = () => {
   // console.log(toys)
   return (
     <div className="mt-10 mb-20">
-        <h2 className="text-center text-5xl font-bold text-violet-700 py-5 ">
+        <h2 className="text-center text-5xl font-bold text-violet-700 py-5 dark-heading">
         Shop By Category
       </h2>
       <div className="tabs flex flex-col lg:flex-row items-center justify-center mb-2">

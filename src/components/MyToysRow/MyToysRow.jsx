@@ -26,7 +26,7 @@ const MyToysRow = ({ myToy, handleDelete, handleUpdate }) => {
   };
 
   return (
-    <tr className="w-full">
+    <tr className="w-full dark:text-white">
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
@@ -35,7 +35,7 @@ const MyToysRow = ({ myToy, handleDelete, handleUpdate }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold text-xl">{toyName}</div>
+            <div className="font-bold text-xl ">{toyName}</div>
             <div className="text-lg opacity-90">{subCategory}</div>
           </div>
         </div>
@@ -43,7 +43,7 @@ const MyToysRow = ({ myToy, handleDelete, handleUpdate }) => {
       <td>
         <span className="text-xl pl-2">{sellerName}</span>
         <br />
-        <span className="badge mt-2 badge-ghost badge-md text-base">
+        <span className="badge mt-2 badge-ghost badge-md text-base dark:text-gray-300">
           {sellerEmail}
         </span>
       </td>

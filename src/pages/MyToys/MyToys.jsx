@@ -104,11 +104,11 @@ const MyToys = () => {
   //   };
   return (
     <div className="bg-rose-100 bg-opacity-25 pb-16">
-      <h2 className="text-center text-5xl font-bold text-violet-700 py-5 ">
+      <h2 className="text-center text-5xl font-bold text-violet-700  dark-heading py-5 ">
         My Toys
       </h2>
       <div className="bg-neutral-200 mx-1 lg:mx-5 rounded-md my-5 py-10  px-2 lg:px-10">
-        <div className="btn-group mb-2">
+        <div className="btn-group mb-2 text-gray-600">
           <button
             onClick={() => handleSort("ascending")}
             className={`rounded-s ${
@@ -130,7 +130,7 @@ const MyToys = () => {
           <table className="table w-full">
             {/* head */}
             <thead>
-              <tr className="text-orange-600 ">
+              <tr className="text-orange-600 dark:text-orange-500 ">
                 <th className="text-base text-center">Toy</th>
                 <th className="text-base">Seller</th>
                 <th className="text-base">Price & Rating</th>

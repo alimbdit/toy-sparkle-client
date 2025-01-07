@@ -39,7 +39,7 @@ const ReviewCard = ({singleReview}) => {
                   value={Math.round(parseFloat(rating)) || 0}
                   readOnly
                 />
-              <p className="mt-1">{review}</p>
+              <p className="mt-1 dark:text-orange-100">{review}</p>
               
             </div>
           </div>

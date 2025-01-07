@@ -9,28 +9,28 @@
 }
 
 .active{
-    @apply text-orange-500 hover:text-orange-600 bg-white underline underline-offset-8 text-lg
+    @apply text-orange-500 hover:text-orange-600 bg-transparent underline underline-offset-8 text-lg
 }
 
 .active-tab{
     @apply   text-orange-600 font-medium hover:text-orange-500 
 }
 .inactive-tab{
-    @apply   text-neutral-500 font-medium hover:text-neutral-600 
+    @apply   text-neutral-500 dark:text-neutral-100 font-medium hover:text-neutral-600 dark:hover:text-neutral-300
 }
 
 .inactive{
-    @apply text-neutral-700 bg-white text-lg hover:text-neutral-800
+    @apply text-neutral-700 dark:text-neutral-100 bg-transparent text-lg hover:text-neutral-800 dark:hover:text-neutral-300
 }
 
 .btn-detail{
-    @apply bg-violet-500 hover:bg-violet-600 duration-300 text-white px-3 py-1 rounded 
+    @apply bg-violet-500 hover:bg-violet-600 border border-violet-700 dark:border-violet-800 duration-300 text-white px-3 py-1 rounded 
 }
 .btn-delete{
-    @apply bg-rose-500 hover:bg-rose-600 duration-300 text-white px-4 py-2 rounded 
+    @apply bg-rose-500 border border-rose-600 dark:border-rose-800  hover:bg-rose-600 duration-300 text-white px-4 py-2 rounded 
 }
 .btn-update{
-    @apply bg-violet-500 hover:bg-violet-600 duration-300 text-white px-4 py-2 rounded 
+    @apply bg-violet-500 border border-violet-600 dark:border-violet-800 hover:bg-violet-600 duration-300 text-white px-4 py-2 rounded 
 }
 
 .btn-default{
@@ -49,4 +49,11 @@
 
 .link-default{
     @apply text-violet-600 hover:text-violet-700 hover:underline font-medium
+}
+
+.dark-text {
+    @apply dark:text-neutral-100
+}
+.dark-heading {
+    @apply dark:text-orange-300
 }

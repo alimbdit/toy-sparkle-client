@@ -16,7 +16,7 @@ const Blogs = () => {
   }
   return (
     <div className="bg-rose-100 bg-opacity-25 pb-16">
-      <h2 className="text-center text-5xl font-bold text-violet-700 py-5 ">
+      <h2 className="text-center text-5xl font-bold text-violet-700 py-5 dark-heading">
         Sample Question Answer
       </h2>
       <div className="bg-neutral-200 rounded-md my-5 py-10  px-2 lg:px-10">

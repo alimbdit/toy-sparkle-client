@@ -52,7 +52,7 @@ const AddToy = () => {
 
   return (
     <div className="bg-rose-100 bg-opacity-25 pb-16">
-      <h2 className="text-center text-5xl font-bold text-violet-700 py-5 ">
+      <h2 className="text-center text-5xl font-bold text-violet-700 dark-heading py-5 ">
         Add A Toy
       </h2>
       <div className="bg-neutral-200 mx-5 lg:mx-10 rounded-md my-5 py-10  px-5 lg:px-20">
@@ -69,7 +69,7 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700 mb-1 pl-2">Toy Name</span>
               
               <input
-                className="input input-bordered focus:outline-0 w-full"
+                className="input input-bordered dark-text focus:outline-0 w-full"
                 placeholder="Toy Name"
                 {...register("toyName", { required: true })}
               />
@@ -85,7 +85,7 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700 mb-1 pl-2">Seller Name</span>
              
               <input
-                className="input input-bordered focus:outline-0 w-full "
+                className="input input-bordered dark-text focus:outline-0 w-full "
                 placeholder="Seller Name"
                 {...register("sellerName", { required: true })}
               />
@@ -103,7 +103,7 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700 mb-1 pl-2">Seller Email</span>
               
               <input
-                className="input input-bordered focus:outline-0 w-full "
+                className="input input-bordered dark-text focus:outline-0 w-full "
                 value={user?.email}
                 placeholder="Seller Email"
                 {...register("sellerEmail")}
@@ -120,7 +120,7 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700 mb-1  pl-2">Price</span>
               
               <input
-                className="input input-bordered focus:outline-0 w-full "
+                className="input input-bordered dark-text focus:outline-0 w-full "
                 placeholder="Price"
                 {...register("price", { required: true })}
               />
@@ -138,13 +138,13 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700  pl-2">Sub Category</span>
               
               <select  placeholder="Select Sub Category"
-                className="select-bordered focus:outline-0 select text-base font-normal "
+                className="select-bordered focus:outline-0 select text-base font-normal dark-text "
                 {...register("subCategory", { required: true })}
               >
                 {/* <option disabled >Pick SubCategory</option> */}
-                <option value="Science Kits">Science Kits</option>
-                <option value="Math Learning Toys">Math Learning Toys</option>
-                <option value="Engineering Kits">Engineering Kits</option>
+                <option value="Science Kits" className="dark-text">Science Kits</option>
+                <option value="Math Learning Toys" className="dark-text">Math Learning Toys</option>
+                <option value="Engineering Kits" className="dark-text">Engineering Kits</option>
                 
               </select>
               </label>
@@ -159,7 +159,7 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700 mb-1 pl-2">Toy Photo URL</span>
               
               <input
-                className="input input-bordered focus:outline-0 w-full "
+                className="input input-bordered dark-text focus:outline-0 w-full "
                 placeholder="Toy Photo URL"
                 {...register("toyPhoto", { required: true })}
               />
@@ -177,7 +177,7 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700 mb-1 pl-2">Rating</span>
               
               <input
-                className="input input-bordered focus:outline-0 w-full "
+                className="input input-bordered dark-text focus:outline-0 w-full "
                 placeholder="Rating"
                 {...register("rating", { required: true })}
               />
@@ -192,7 +192,7 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700 mb-1 pl-2">Available Quantity</span>
               
               <input
-                className="input input-bordered focus:outline-0 w-full "
+                className="input input-bordered dark-text focus:outline-0 w-full "
                 placeholder="Available Quantity"
                 {...register("quantity", { required: true })}
               />
@@ -209,7 +209,7 @@ const AddToy = () => {
                 <span className="text-lg font-medium text-violet-700  pl-2">Detail Description</span>
               
             <textarea
-              className="input input-bordered focus:outline-0 mt-1 w-full h-20 py-2"
+              className="input input-bordered dark-text focus:outline-0 mt-1 w-full h-20 py-2"
               placeholder="Detail Description"
               {...register("description", { required: true })}
             />

@@ -28,7 +28,7 @@ const AllToy = () => {
 
   return (
     <div className="bg-rose-100 bg-opacity-25 pb-16">
-      <h2 className="text-center text-5xl font-bold text-violet-700 py-5 ">
+      <h2 className="text-center text-5xl font-bold text-violet-700 py-5 dark-heading">
         All Toy
       </h2>
       <div className="bg-neutral-200 mx-1 lg:mx-5 rounded-md my-5 py-10  px-2 lg:px-10">
@@ -38,7 +38,7 @@ const AllToy = () => {
             onChange={(e) => setSearchName(e.target.value)}
               type="text"
               placeholder="Search…"
-              className="input input-bordered  focus:outline-offset-0"
+              className="input input-bordered dark-text focus:outline-offset-0"
             />
             <button onClick={handleSearch} className="btn btn-square">
               <svg
@@ -63,7 +63,7 @@ const AllToy = () => {
           <table className="table w-full ">
             {/* head */}
             <thead>
-              <tr className="text-orange-600">
+              <tr className="text-orange-600 dark:text-orange-500">
                 <th className="text-base">#</th>
                 <th className="text-base">Seller</th>
                 <th className="text-base">Toy Name</th>
@@ -76,7 +76,7 @@ const AllToy = () => {
             <tbody>
               {/* row 1 */}
               {toys?.map((toy, index) => (
-                <tr key={toy?._id} className="text-neutral-700">
+                <tr key={toy?._id} className="text-neutral-700 dark-text">
                   <th>{index + 1}</th>
                   <td className="font-bold">{toy?.sellerName}</td>
                   <td className="font-bold">{toy?.toyName}</td>

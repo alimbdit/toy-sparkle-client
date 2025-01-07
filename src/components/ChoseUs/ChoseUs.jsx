@@ -13,16 +13,16 @@ const ChoseUs = () => {
     <div className=" my-10 lg:mt-16 lg:mb-28">
       <div className=" component gap-10 flex flex-col lg:flex-row items-center ">
         <div className="w-full text-center lg:text-end" >
-          <h2 className="text-5xl font-bold text-violet-700 mb-5" data-aos="fade-down">
+          <h2 className="text-5xl font-bold text-violet-700 dark-heading mb-5" data-aos="fade-down">
             Why Chose Us
           </h2>
-          <p className="text-lg text-neutral-700" data-aos="fade-up">
+          <p className="text-lg text-neutral-700 dark-text" data-aos="fade-up">
             We prioritize the safety and happiness of your little ones. Our toys
             go through rigorous quality checks to ensure they meet the highest
             standards. We carefully select toys from reputable brands known for
             their craftsmanship and commitment to quality.{" "}
           </p>
-          <p className="text-lg text-neutral-700" data-aos="fade-up">
+          <p className="text-lg text-neutral-700 dark-text" data-aos="fade-up">
             We offer an extensive selection of toys that cater to all ages and
             interests. From classic favorites to the latest trends, our
             collection is thoughtfully curated to bring joy and spark

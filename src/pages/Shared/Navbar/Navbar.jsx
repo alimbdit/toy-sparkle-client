@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 
 import toys from "../../../../public/toys.png";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
@@ -116,7 +116,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 bg-transparent">
             <li>
               <NavLink
                 to="/"
