@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 084cffe (firebase deploying fixed)
 # toy-sparkle-client-side
 
 # ToySparkle
