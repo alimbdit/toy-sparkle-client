@@ -54,10 +54,10 @@ const ToyDetails = () => {
               >
                 <FaArrowCircleLeft className="mr-1 text-2xl duration-300 text-violet-500 hover:text-indigo-500" />
               </button>
-              <h2 className="text-2xl font-bold text-orange-500">{toyName}</h2>
+              <h2 className="text-2xl font-bold text-orange-500 dark:text-orange-400">{toyName}</h2>
               {/* <hr /> */}
 
-              <p className=" text-lg text-orange-700">
+              <p className=" text-lg text-orange-700 dark:text-orange-200">
                 {/* <h3 className="text-lg  text-neutral-800 font-medium">
                   Product Info
                 </h3> */}
@@ -67,25 +67,25 @@ const ToyDetails = () => {
               </p>
               <hr />
               <div>
-                <h3 className="text-lg  text-orange-700">
-                  <span className="text-orange-800 font-medium">
+                <h3 className="text-lg  text-orange-700 dark:text-orange-200">
+                  <span className="text-orange-800 dark:text-orange-300 font-medium">
                     Seller Name:
                   </span>{" "}
                   {sellerName}
                 </h3>
-                <h3 className="text-lg  text-orange-700">
-                  <span className="text-orange-800 font-medium">
+                <h3 className="text-lg  text-orange-700 dark:text-orange-200">
+                  <span className="text-orange-800 dark:text-orange-300 font-medium">
                     Seller Email:
                   </span>{" "}
                   {sellerEmail}
                 </h3>
 
-                <h3 className="text-lg  text-orange-700">
-                  <span className="text-orange-800 font-medium">Price:</span> $
+                <h3 className="text-lg  text-orange-700 dark:text-orange-200">
+                  <span className="text-orange-800 dark:text-orange-300 font-medium">Price:</span> $
                   {price}
                 </h3>
-                <h3 className="text-lg  text-orange-700">
-                  <span className="text-orange-800 font-medium">
+                <h3 className="text-lg  text-orange-700 dark:text-orange-200">
+                  <span className="text-orange-800 dark:text-orange-300 font-medium">
                     Available Quantity:
                   </span>{" "}
                   {quantity}

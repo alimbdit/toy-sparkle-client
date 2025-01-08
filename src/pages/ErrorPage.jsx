@@ -14,10 +14,10 @@ const ErrorPage = () => {
       <div className="flex justify-center mt-5 lg:-mt-2">
         <Lottie className=" lg:w-1/3 " animationData={errorAni} loop={true} />
       </div>
-      <h2 className="mb-2 -mt-5 lg:-mt-14 font-bold text-8xl text-rose-700 text-center">
+      <h2 className="mb-2 -mt-5 lg:-mt-14 font-bold text-8xl text-rose-700 dark:text-rose-600 text-center">
         <span className="sr-only">Error</span> {status || 404}
       </h2>
-      <p className="text-xl text-center text-neutral-700 font-semibold md:text-3xl mb-3">
+      <p className="text-xl text-center text-neutral-700 dark:text-neutral-300 font-semibold md:text-3xl mb-3">
         {error?.message}
       </p>
       <div className="flex justify-center">
